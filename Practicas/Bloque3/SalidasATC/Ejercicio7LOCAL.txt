@@ -1,0 +1,69 @@
+VECTORES DE TAMAÑO 5000
+
+STATIC
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="static"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.118467570	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="static,2"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.122596238	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="static,32"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.093263879	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="static,64"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.093504901	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="static,1024"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.108767036	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+
+DYNAMIC
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="dynamic"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.223967361	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="dynamic,2"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.208795182	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="dynamic,32"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.094489523	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="dynamic,64"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.093513212	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="dynamic,1024"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.109555614	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ 
+
+GUIDED
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="guided"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.094476323	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="guided,2"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.094012367	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="guided,32"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.094004057	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="guided,64"
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./7 
+Tiempo(seg.):0.093865212	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_SCHEDULE="guided,1024"
+Tiempo(seg.):0.105620041	 / Tamaño Vectores:5000
+Valor v2[0]= 0 v2[n-1]=1049954896
+
+

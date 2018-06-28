@@ -1,0 +1,10 @@
+O0
+2,340388653	 / Tamaño Vectores:600
+O1
+0,280596835	 / Tamaño Vectores:600
+O2
+0,337935198	 / Tamaño Vectores:600
+O3
+0,314118484	 / Tamaño Vectores:600
+Os
+1,160816458	 / Tamaño Vectores:600

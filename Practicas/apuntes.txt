@@ -1,0 +1,102 @@
+**************************************************************	
+--------------------------------SEMINARIO 0-------------------
+**************************************************************
+
+Iniciar terminales:
+   Comando "bash"
+
+SFTP:
+conexion: sftp A3estudiante13@atcgrid.ugr.es
+put para poner archivo en directorio remoto
+get para coger archivo de directorio remoto
+Home: /home/A3estudiante13/
+
+Comandos en atcgrid(una vez conectado)
+	ls
+	cd
+	mkdir
+	pwd
+Comandos en local (añadiendo una l mas al principio)
+	lls 
+	lcd
+	lmkdir
+	lpwd
+
+
+SSH:
+conexion: ssh A3estudiante13@atcgrid.ugr.es
+Lanzar en torque: echo ‘Ruta/ejecutable’ | qsub -q ac "LA RUTA RELATIVA DESDE NUESTRO HOME" 
+	ejemplo [echo 'Bloque0/helloOMP' | qsub -q ac]
+ls -la 
+	STDIN.e errores
+	STDIN.o salida normal
+
+Hacer get de lo importante y luego rm STDIN.*
+
+SCRIPT
+lanzar: qsub script.sh
+
+COMPILAR EN ATCGRID:
+put del .c
+gcc -fopenmp -O2 -o helloOMP helloOPM.c
+
+**************************************************************	
+--------------------------------SEMINARIO 1-------------------
+**************************************************************
+
+export OMP_DYNAMIC=(TRUE Limita a los cores de la maquina, False no)
+export OMP_NUM_THREADS=30 Simula 30 cores
+
+Sections:
+	Si hay mas hebras que secciones, solo se usan las necesarias
+	Si hay mas secciones que hebras, se ejecutan conforme se liberan las hebras
+
+Barrier: Solo se pone cuando sea necesario
+Critical no tiene barrera
+
+**************************************************************	
+--------------------------------SEMINARIO 2-------------------
+**************************************************************
+Los indices de los for de los pragmaOMP for son privados 
+Las variables declaradas fuera de un parallel son compartidas
+	- shared por si solo no hace nada
+	- cuando se hace private de una variable, pasa a tener basura (modifica), tras hacer el join tambien pasa igual, el contenido se pierde.
+	- La utilidad de lasprivate es casi en su totalidad de depuracion. Añade una funcionalidad a la clausula private copiando el ultimo valor de la ejecucion secuencial en esa variable.
+
+CLAUSULA DEFAULT se va a utilizar siempre default(none) lo que nos obliga a poner si las variables son compartidas o privadas
+	- copyprivate hace difusion al final hacia todas las hebras, solo vale en single.
+	- reduction hace una operacion de reunion de resultados de forma que la variable especificada es compartida fuera de la directiva de reduction, pero es privada dentro del mismo y justo antes de salir se reune el resultado.
+
+**************************************************************	
+--------------------------------SEMINARIO 3-------------------
+**************************************************************
+Guided es un tipo dinamico especial. Util si se desconoce el tiempo de ejecucion de las iteraciones o su numero.
+	Reparte el trabajo entre el numero de hebras, quedando n iteraciones, las cuales reparte de nuevo a la siguiente hebra (8/4=2 quedan 6 6/4=1,5...)
+
+Planificacion de los for:
+	- Por defecto, de forma static con el chunk equitativo -> static,equitativamente
+	- Schedule(static,chunk)-> En tiempo de ejecucion, iteraciones de chunk en chunk
+	- Schedule(dynamic,chunk)-> Se dividen en chunk, y se van dando conforme los threads quedan libres (los threads mas rapidos ejecutan mas unidades)
+	- Schedule(guided,chunk)-> Reparte el trabajo entre el numero de hebras, quedando n iteraciones, las cuales reparte de nuevo a la siguiente hebra (8/4=2 			quedan 6 6/4=1,5...)
+	- Schedule(runtime)-> Depende del valor de run_sched-var que tiene un valor por defecto. O bien de la variable de entorno OMP_SCHEDULE. O bien de lo que 			establezca la funcion omp_set_schedule. Ordenados de menor a mayor preferencia.
+	
+
+**************************************************************	
+--------------------------------SEMINARIO 4-------------------
+**************************************************************
+Se busca la independencia de datos.
+En el desenrollado de bucle es importante que se usen variables distintas para aprovechar esto.
+	Ejemplo invalido:				Ejemplo Valido:
+	for(int i=0;i<100;i=i+3){			for(int i=0;i<100;i=i+3){
+		tmp+=ad[i];					tmp0+=ad[i];
+		tmp+=ad[i+1];					tmp1+=ad[i+1];
+		tmp+=ad[i+2];					tmp2+=ad[i+2];
+	}						}
+
+Abusar de los punteros en codigos, puede llevar a que el compilador no pueda optimizar lo que deberia. Esto se debe controlar sobre todo en los cuellos de botella.
+Pagina 13.-
+	Cuando declaramos p, se le suma el bound-1 para darle un espacio de sobra al final.
+	Con newp, lo que hacemos es cambiar donde empieza la variable, sumandole a p un valor bound-1 para que ocupe la siguiente linea, en la misma posicion que en la superior.Ademas de esto, esta direccion tendria un valor x, al cual si se le hace el &~ logico con Bound-1 hace que la linea empiece al principio, ya que se le modifican los ultimos bits (5 en este caso) a 0, estando alineado cuando se lleve a cache.
+
+El acceso a una matriz se deberia hacer por filas no por columnas, y la separacion entre datos usados de golpe debe ser distinta de 4kb para que no sean penalizados por llenar lineas asociativas por conjuntos.
+

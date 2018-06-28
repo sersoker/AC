@@ -1,0 +1,1 @@
+/var/lib/torque/mom_priv/jobs/5003.atcgrid.SC: line 21: 22603 Segmentation fault      $PBS_O_WORKDIR/SumaVectoresC $N

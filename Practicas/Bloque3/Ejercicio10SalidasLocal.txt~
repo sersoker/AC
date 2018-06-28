@@ -1,0 +1,31 @@
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_DYNAMIC=false
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_NUM_THREADS=1
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 50
+Tiempo(seg.):0.001490367	 / Tamaño Vectores:50
+Valor M[0][0]= 50 M[n-1][n-1]=50
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 100
+Tiempo(seg.):0.011295997	 / Tamaño Vectores:100
+Valor M[0][0]= 100 M[n-1][n-1]=100
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 500
+Tiempo(seg.):1.663298994	 / Tamaño Vectores:500
+Valor M[0][0]= 500 M[n-1][n-1]=500
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 1000
+Tiempo(seg.):17.396896208	 / Tamaño Vectores:1000
+Valor M[0][0]= 1000 M[n-1][n-1]=1000
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ export OMP_NUM_THREADS=2
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 50Tiempo(seg.):0.001162485	 / Tamaño Vectores:50
+Valor M[0][0]= 50 M[n-1][n-1]=50
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 100
+Tiempo(seg.):0.012660287	 / Tamaño Vectores:100
+Valor M[0][0]= 100 M[n-1][n-1]=100
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 500
+Tiempo(seg.):0.659036311	 / Tamaño Vectores:500
+Valor M[0][0]= 500 M[n-1][n-1]=500
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ ./9 1000
+Tiempo(seg.):9.773877216	 / Tamaño Vectores:1000
+Valor M[0][0]= 1000 M[n-1][n-1]=1000
+sersoker@toshiba14:~/Dropbox/Universidad/AC/Practicas/Bloque3$ 
+
+
+
+

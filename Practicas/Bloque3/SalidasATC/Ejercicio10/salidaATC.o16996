@@ -1,0 +1,30 @@
+2 threads
+Tiempo(seg.):0.000376271	 / Tamaño Vectores:50
+Valor M[0][0]= 50 M[n-1][n-1]=50
+Tiempo(seg.):0.001732842	 / Tamaño Vectores:100
+Valor M[0][0]= 100 M[n-1][n-1]=100
+Tiempo(seg.):0.201815925	 / Tamaño Vectores:500
+Valor M[0][0]= 500 M[n-1][n-1]=500
+Tiempo(seg.):5.168873505	 / Tamaño Vectores:1000
+Valor M[0][0]= 1000 M[n-1][n-1]=1000
+
+6 threads
+
+Tiempo(seg.):0.002597006	 / Tamaño Vectores:50
+Valor M[0][0]= 50 M[n-1][n-1]=50
+Tiempo(seg.):0.001147318	 / Tamaño Vectores:100
+Valor M[0][0]= 100 M[n-1][n-1]=100
+Tiempo(seg.):0.070541788	 / Tamaño Vectores:500
+Valor M[0][0]= 500 M[n-1][n-1]=500
+Tiempo(seg.):1.842176021	 / Tamaño Vectores:1000
+Valor M[0][0]= 1000 M[n-1][n-1]=1000
+
+12 threads
+Tiempo(seg.):0.003014288	 / Tamaño Vectores:50
+Valor M[0][0]= 50 M[n-1][n-1]=50
+Tiempo(seg.):0.005276771	 / Tamaño Vectores:100
+Valor M[0][0]= 100 M[n-1][n-1]=100
+Tiempo(seg.):0.205843102	 / Tamaño Vectores:500
+Valor M[0][0]= 500 M[n-1][n-1]=500
+Tiempo(seg.):1.043182712	 / Tamaño Vectores:1000
+Valor M[0][0]= 1000 M[n-1][n-1]=1000

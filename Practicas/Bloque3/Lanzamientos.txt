@@ -1,0 +1,57 @@
+/home/A3estudiante13
+
+gcc -fopenmp -O2 -o a a.c
+gcc -fopenmp -O2 -o b b.c
+gcc -fopenmp -O2 -o c c.c
+
+
+echo "/home/A3estudiante13/Bloque3/a 1" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/a 2" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/a 32" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/a 64" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/a 1024" | qsub -q ac
+
+echo "/home/A3estudiante13/Bloque3/b 1" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/b 2" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/b 32" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/b 64" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/b 1024" | qsub -q ac
+
+echo "/home/A3estudiante13/Bloque3/c 1" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/c 2" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/c 32" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/c 64" | qsub -q ac
+echo "/home/A3estudiante13/Bloque3/c 1024" | qsub -q ac
+
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/a 1" | qsub -q ac
+16958.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/a 2" | qsub -q ac
+16959.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/a 32" | qsub -q ac
+16960.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/a 64" | qsub -q ac
+16961.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/a 1024" | qsub -q ac
+16962.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/b 1" | qsub -q ac
+16963.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/b 2" | qsub -q ac
+16964.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/b 32" | qsub -q ac
+16965.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/b 64" | qsub -q ac
+16966.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/b 1024" | qsub -q ac
+16968.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/c 1" | qsub -q ac
+16969.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/c 2" | qsub -q ac
+16970.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/c 32" | qsub -q ac
+16971.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/c 64" | qsub -q ac
+16972.atcgrid
+[A3estudiante13@atcgrid Bloque3]$ echo "/home/A3estudiante13/Bloque3/c 1024" | qsub -q ac
+16973.atcgrid
+
+
